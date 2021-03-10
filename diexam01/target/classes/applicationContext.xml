@@ -4,5 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="userBean" class="com.bin.connect.diexam01.UserBean"/>
-
+	<bean id="e" class="com.bin.connect.diexam01.Engine"/>
+	<bean id="c" class="com.bin.connect.diexam01.Car">
+		<property name="engine" ref="e"></property>
+	</bean>
 </beans>

@@ -8,13 +8,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-
-
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(MockitoJUnitRunner.class) // mockito가 제공하는 Junit 확장 클래스
 //@ContextConfiguration(classes = {ApplicationConfig.class})

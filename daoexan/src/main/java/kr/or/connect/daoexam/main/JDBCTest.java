@@ -13,18 +13,24 @@ public class JDBCTest {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
 		RoleDao roleDao = ac.getBean(RoleDao.class);
-		
+
+		/*
 		Role role = new Role();
 		role.setRoleId(201);
-		//role.setDescription("CEO");
+
+		// role.setDescription("CEO");
 		int count = roleDao.insert(role);
 		System.out.println(count + "건 입력하였습니다.");
-		
+
 		role.setDescription("PROGRAMMER");
 		count = roleDao.update(role);
-		
-		
+
 		System.out.println(count + "건 입력하였습니다.");
+		 */
+		int deleteCount = roleDao.deleteById(500);
+		System.out.println(deleteCount);
+		Role resultRole2 = roleDao.selectById(500);
+		System.out.println(resultRole2);
+		
 	}
-	
 }

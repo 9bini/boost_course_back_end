@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello would</h1>
+	<form action="plus" method="post">
+		value 1 : <input type="text" name="value1"><br /> 
+		value 2 : <input type="text" name="value2"><br /> 
+		<input type="submit" value="확인">
+	</form>
 </body>
 </html>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello would</h1>
+	${value1} 더하기 ${value2} (은/는) ${result} 입니다.
 </body>
 </html>

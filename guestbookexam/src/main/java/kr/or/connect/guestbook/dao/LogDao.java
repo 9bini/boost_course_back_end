@@ -13,19 +13,17 @@ import kr.or.connect.guestbook.dto.Log;
 @Repository
 public class LogDao {
 	private NamedParameterJdbcTemplate jdbc;
-	private SimpleJdbcInsert insertAction;
+    private SimpleJdbcInsert insertAction;
 
-	public LogDao(DataSource dataSource) {
-		super();
-		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
-		this.insertAction = new SimpleJdbcInsert(dataSource)
-				.withTableName("log")
-				.usingGeneratedKeyColumns("id");
-	}
-	
+    public LogDao(DataSource dataSource) {
+        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
+        this.insertAction = new SimpleJdbcInsert(dataSource)
+                .withTableName("log")
+                .usingGeneratedKeyColumns("id");
+    }
+
 	public Long insert(Log log) {
 		SqlParameterSource params = new BeanPropertySqlParameterSource(log);
 		return insertAction.executeAndReturnKey(params).longValue();
 	}
-
 }

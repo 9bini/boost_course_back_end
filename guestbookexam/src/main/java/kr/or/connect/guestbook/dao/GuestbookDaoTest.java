@@ -11,7 +11,7 @@ import kr.or.connect.guestbook.dto.Log;
 public class GuestbookDaoTest {
 
 	public static void main(String[] args) {
-		ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class); 
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class); 
 //		GuestbookDao guestbookDao = ac.getBean(GuestbookDao.class);
 //		
 //		Guestbook guestbook = new Guestbook();
@@ -20,7 +20,7 @@ public class GuestbookDaoTest {
 //		guestbook.setRegdate(new Date());
 //		Long id = guestbookDao.insert(guestbook);
 		
-		LogDao logDao = ac.getBean(LogDao.class);
+		LogDao logDao = applicationContext.getBean(LogDao.class);
 		Log log = new Log();
 		log.setIp("127.0.0.1");
 		log.setMethod("insert");

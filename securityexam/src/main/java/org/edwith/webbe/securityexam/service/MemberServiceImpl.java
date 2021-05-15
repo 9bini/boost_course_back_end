@@ -44,4 +44,22 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return list;
 	}
+
+	@Override
+	@Transactional(readOnly = false)
+	public void addMember(Member member, boolean admin) {
+		memberDao.addMember(member);
+
+		Member selectedMember = memberDao.getMemberByEmail(member.getEmail());
+		Long memberId = selectedMember.getId();
+		if (admin) {
+			memberRoleDao.addAdminRole(memberId);
+		}
+		memberRoleDao.addUserRole(memberId);
+	}
+
+	@Override
+	public Member getMemberByEmail(String email) {
+		return memberDao.getMemberByEmail(email);
+	}
 }
